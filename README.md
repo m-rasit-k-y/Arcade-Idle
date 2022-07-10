@@ -1,1 +1,1 @@
-# Test Project
+# Arcade Idle Test Project
