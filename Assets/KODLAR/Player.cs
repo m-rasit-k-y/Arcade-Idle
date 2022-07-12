@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public Image joystick_image, Handle_image;
 
     public Button _EkmeTusu;
+    public GameObject Sack;
+    [HideInInspector]
+    public bool move = true;
     public enum Control
     {
         Pc,
@@ -25,14 +28,14 @@ public class Player : MonoBehaviour
         Azalt();
         anim = GetComponent<Animator>();
     }
-    private void FixedUpdate()
-    {
-        Movement();
-    }
 
     private void Update()
     {
         Animations();
+        if (move)
+        {
+            Movement();
+        }
     }
 
     private void Movement()
@@ -70,42 +73,48 @@ public class Player : MonoBehaviour
 
     private void Animations()
     {
-        if (control == Control.Pc)
+        if (move)
         {
-            float inputX = Input.GetAxis("Horizontal");
-            float inputY = Input.GetAxis("Vertical");
-
-            Vector3 StickDirection = new Vector3(inputX, 0, inputY);
-
-            float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
-
-            if (toplamhiz > 0.01f)
+            if (control == Control.Pc)
             {
-                anim.SetBool("Run", true);
+                float inputX = Input.GetAxis("Horizontal");
+                float inputY = Input.GetAxis("Vertical");
+
+                Vector3 StickDirection = new Vector3(inputX, 0, inputY);
+
+                float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
+
+                if (toplamhiz > 0.01f)
+                {
+                    anim.SetBool("Run", true);
+                }
+                else
+                {
+                    anim.SetBool("Run", false);
+                }
             }
-            else
+            else if (control == Control.Mobile)
             {
-                anim.SetBool("Run", false);
+                float inputX = joystick.Horizontal;
+                float inputY = joystick.Vertical;
+
+                Vector3 StickDirection = new Vector3(inputX, 0, inputY);
+
+                float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
+
+                if (toplamhiz > 0.01f)
+                {
+                    anim.SetBool("Run", true);
+                }
+                else
+                {
+                    anim.SetBool("Run", false);
+                }
             }
         }
-        else if (control == Control.Mobile)
-        {
-            float inputX = joystick.Horizontal;
-            float inputY = joystick.Vertical;
 
-            Vector3 StickDirection = new Vector3(inputX, 0, inputY);
-
-            float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
-
-            if (toplamhiz > 0.01f)
-            {
-                anim.SetBool("Run", true);
-            }
-            else
-            {
-                anim.SetBool("Run", false);
-            }
-        }
+        _EkmeTusu.onClick.AddListener(() => anim.SetTrigger("Seeding"));
+        _EkmeTusu.onClick.AddListener(() => move = false);
     }
 
     public void Cogalt()
@@ -122,14 +131,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Farm")
+        if (col.CompareTag("Farm"))
         {
             col.GetComponent<Farming>().enabled = true;
         }
     }
     private void OnTriggerExit(Collider col)
     {
-        if (col.tag == "Farm")
+        if (col.CompareTag("Farm"))
         {
             col.GetComponent<Farming>().enabled = false;
         }

@@ -30,13 +30,13 @@ public class Farming : MonoBehaviour
     }
     private void Update()
     {
-        playerscript._EkmeTusu.onClick.AddListener(() => Farmer());
+
     }
 
 
     private void OnTriggerStay(Collider col)
     {
-
+        playerscript._EkmeTusu.onClick.AddListener(() => StartCoroutine(Farmer()));
         if (col.CompareTag("Player") && !Growing)
         {
             playerscript._EkmeTusu.gameObject.SetActive(true);
@@ -44,28 +44,26 @@ public class Farming : MonoBehaviour
     }
     private void OnTriggerExit(Collider col)
     {
+        playerscript._EkmeTusu.onClick.RemoveAllListeners();
         if (playerscript._EkmeTusu.gameObject.activeInHierarchy)
         {
             playerscript._EkmeTusu.gameObject.SetActive(false);
         }
     }
 
-    private void Farmer()
-    {
-        if (!Growing)
-        {
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                Seedlings[i].SetActive(true);
-                Growing = true;
-                StartCoroutine(Growings());
-                playerscript._EkmeTusu.gameObject.SetActive(false);
-            }
-        }
-    }
 
-    IEnumerator Growings()
+    IEnumerator Farmer()
     {
+        Growing = true;
+        playerscript._EkmeTusu.gameObject.SetActive(false);
+        playerscript.Sack.SetActive(true);
+        yield return new WaitForSeconds(2.4f);
+        playerscript.move = true;
+        playerscript.Sack.SetActive(false);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Seedlings[i].SetActive(true);
+        }
         yield return new WaitForSeconds(5);
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -77,7 +75,7 @@ public class Farming : MonoBehaviour
         {
             Carrots[i].SetActive(false);
             Virgos[i].SetActive(true);
-            StopCoroutine(Growings());
+            StopCoroutine(Farmer());
         }
         
     }
