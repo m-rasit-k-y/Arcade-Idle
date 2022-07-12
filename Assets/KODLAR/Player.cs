@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private Animator anim;
     public FixedJoystick joystick;
     public Image joystick_image, Handle_image;
+
+    public Button _EkmeTusu;
     public enum Control
     {
         Pc,
@@ -120,9 +122,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "")
+        if (col.tag == "Farm")
         {
-
+            col.GetComponent<Farming>().enabled = true;
+        }
+    }
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "Farm")
+        {
+            col.GetComponent<Farming>().enabled = false;
         }
     }
 }

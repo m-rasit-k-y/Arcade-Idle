@@ -1,13 +1,32 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "RZ8N12NP45M",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RZ8N12NP45M",
+        "name": "com.ArcaneGames.CasualGame",
+        "processId": 26401,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "RZ8N12NP45M",
+            "name": "com.ArcaneGames.CasualGame",
+            "processId": 18749,
+            "exited": false
+        },
+        {
+            "deviceId": "RZ8N12NP45M",
+            "name": "com.ArcaneGames.CasualGame",
+            "processId": 20821,
+            "exited": false
+        },
+        {
+            "deviceId": "RZ8N12NP45M",
+            "name": "com.ArcaneGames.CasualGame",
+            "processId": 26401,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +60,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },

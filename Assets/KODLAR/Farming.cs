@@ -1,18 +1,20 @@
 using System.Collections;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Farming : MonoBehaviour
 {
+
     public List<GameObject> Seedlings;
     public List<GameObject> Carrots;
     public List<GameObject> Virgos;
     private bool Growing;
-    public GameObject EkmeTusu;
 
+    private Player playerscript;
     private void Awake()
     {
+        playerscript = GameObject.FindWithTag("Player").GetComponent<Player>();
         for (int i = 0; i < transform.childCount; i++)
         {
             Seedlings.Add(transform.GetChild(i).GetChild(1).gameObject);
@@ -28,7 +30,7 @@ public class Farming : MonoBehaviour
     }
     private void Update()
     {
-
+        playerscript._EkmeTusu.onClick.AddListener(() => Farmer());
     }
 
 
@@ -37,28 +39,27 @@ public class Farming : MonoBehaviour
 
         if (col.CompareTag("Player") && !Growing)
         {
-            EkmeTusu.SetActive(true);
+            playerscript._EkmeTusu.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider col)
     {
-        if (EkmeTusu.activeInHierarchy)
+        if (playerscript._EkmeTusu.gameObject.activeInHierarchy)
         {
-            EkmeTusu.SetActive(false);
+            playerscript._EkmeTusu.gameObject.SetActive(false);
         }
     }
 
-    public void Farmer(bool seedling)
+    private void Farmer()
     {
-
-        if (seedling && !Growing)
+        if (!Growing)
         {
             for (int i = 0; i < transform.childCount; i++)
             {
                 Seedlings[i].SetActive(true);
                 Growing = true;
                 StartCoroutine(Growings());
-                EkmeTusu.SetActive(false);
+                playerscript._EkmeTusu.gameObject.SetActive(false);
             }
         }
     }
