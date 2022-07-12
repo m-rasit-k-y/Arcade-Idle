@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [Range(1,20)]
     public float Hiz;
-    public Animator anim;
+    private Animator anim;
     public FixedJoystick joystick;
     public Image joystick_image, Handle_image;
     public enum Control
@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Azalt();
+        anim = GetComponent<Animator>();
     }
     private void FixedUpdate()
     {
@@ -40,9 +41,8 @@ public class Player : MonoBehaviour
             float inputY = Input.GetAxis("Vertical");
 
             Vector3 MovDirection = new Vector3(inputX, 0, inputY);
-            MovDirection.Normalize();
 
-            transform.Translate(MovDirection * Hiz * Time.deltaTime, Space.World);
+            transform.Translate(MovDirection.normalized * Hiz * Time.deltaTime, Space.World);
 
             if (MovDirection != Vector3.zero)
             {
@@ -64,16 +64,10 @@ public class Player : MonoBehaviour
                 transform.forward = MovDirection;
             }
         }
-
-        // PC
-        // Mobile
-
-
     }
 
     private void Animations()
     {
-        // PC
         if (control == Control.Pc)
         {
             float inputX = Input.GetAxis("Horizontal");
@@ -122,5 +116,13 @@ public class Player : MonoBehaviour
     {
         joystick_image.color = new Color(1, 1, 1, 0.3f);
         Handle_image.color = new Color(1, 1, 1, 0.3f);
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "")
+        {
+
+        }
     }
 }
