@@ -22321,7 +22321,7 @@ MonoBehaviour:
   Sack: {fileID: 1208812548}
   Scythe: {fileID: 4764888610105118647}
   move: 1
-  control: 1
+  control: 0
 --- !u!4 &689779802
 Transform:
   m_ObjectHideFlags: 0
@@ -22330,7 +22330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689779798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.21, y: 0, z: 10.608699}
+  m_LocalPosition: {x: -17.21, y: 0.003067851, z: 10.608699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
