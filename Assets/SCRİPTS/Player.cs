@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class Player : Sawing
 {
@@ -10,8 +9,7 @@ public class Player : Sawing
     public float Hiz;
     [HideInInspector]
     public Animator anim;
-    public FixedJoystick joystick;
-    public Image joystick_image, Handle_image;
+    public FloatingJoystick joystick;
 
     public Button EkmeTusu;
     public Button BicmeTusu;
@@ -28,7 +26,6 @@ public class Player : Sawing
 
     private void Awake()
     {
-        Azalt();
         anim = GetComponent<Animator>();
     }
 
@@ -115,18 +112,6 @@ public class Player : Sawing
                 move = true;
                 break;
         }
-    }
-
-    public void Cogalt()
-    {
-        joystick_image.color = new Color(1, 1, 1, 1);
-        Handle_image.color = new Color(1, 1, 1, 1);
-    }
-
-    public void Azalt()
-    {
-        joystick_image.color = new Color(1, 1, 1, 0.3f);
-        Handle_image.color = new Color(1, 1, 1, 0.3f);
     }
 
     private void OnTriggerEnter(Collider col)
