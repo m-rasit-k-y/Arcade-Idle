@@ -36,18 +36,18 @@ public class Farming : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
-        playerscript._EkmeTusu.onClick.AddListener(() => StartCoroutine(Farmer()));
+        playerscript.EkmeTusu.onClick.AddListener(() => StartCoroutine(Farmer()));
         if (col.CompareTag("Player") && !Growing)
         {
-            playerscript._EkmeTusu.gameObject.SetActive(true);
+            playerscript.EkmeTusu.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider col)
     {
-        playerscript._EkmeTusu.onClick.RemoveAllListeners();
-        if (playerscript._EkmeTusu.gameObject.activeInHierarchy)
+        playerscript.EkmeTusu.onClick.RemoveAllListeners();
+        if (playerscript.EkmeTusu.gameObject.activeInHierarchy)
         {
-            playerscript._EkmeTusu.gameObject.SetActive(false);
+            playerscript.EkmeTusu.gameObject.SetActive(false);
         }
     }
 
@@ -55,10 +55,9 @@ public class Farming : MonoBehaviour
     IEnumerator Farmer()
     {
         Growing = true;
-        playerscript._EkmeTusu.gameObject.SetActive(false);
+        playerscript.EkmeTusu.gameObject.SetActive(false);
         playerscript.Sack.SetActive(true);
         yield return new WaitForSeconds(2.4f);
-        playerscript.move = true;
         playerscript.Sack.SetActive(false);
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -75,6 +74,7 @@ public class Farming : MonoBehaviour
         {
             Carrots[i].SetActive(false);
             Virgos[i].SetActive(true);
+            transform.tag = "Sawnable";
             StopCoroutine(Farmer());
         }
         

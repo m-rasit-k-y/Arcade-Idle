@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Player : MonoBehaviour
+public class Player : Sawing
 {
     [Range(1,20)]
     public float Hiz;
@@ -12,8 +12,10 @@ public class Player : MonoBehaviour
     public FixedJoystick joystick;
     public Image joystick_image, Handle_image;
 
-    public Button _EkmeTusu;
+    public Button EkmeTusu;
+    public Button BicmeTusu;
     public GameObject Sack;
+    public GameObject Scythe;
     [HideInInspector]
     public bool move = true;
     public enum Control
@@ -31,7 +33,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Animations();
         if (move)
         {
             Movement();
@@ -53,6 +54,19 @@ public class Player : MonoBehaviour
             {
                 transform.forward = MovDirection;
             }
+
+            Vector3 StickDirection = new Vector3(inputX, 0, inputY);
+
+            float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
+
+            if (toplamhiz > 0.01f)
+            {
+                anim.SetBool("Run", true);
+            }
+            else
+            {
+                anim.SetBool("Run", false);
+            }
         }
         else if (control == Control.Mobile)
         {
@@ -68,53 +82,38 @@ public class Player : MonoBehaviour
             {
                 transform.forward = MovDirection;
             }
+
+            Vector3 StickDirection = new Vector3(inputX, 0, inputY);
+
+            float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
+
+            if (toplamhiz > 0.01f)
+            {
+                anim.SetBool("Run", true);
+            }
+            else
+            {
+                anim.SetBool("Run", false);
+            }
         }
     }
 
-    private void Animations()
+    public void Animations(string state)
     {
-        if (move)
+        switch (state)
         {
-            if (control == Control.Pc)
-            {
-                float inputX = Input.GetAxis("Horizontal");
-                float inputY = Input.GetAxis("Vertical");
-
-                Vector3 StickDirection = new Vector3(inputX, 0, inputY);
-
-                float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
-
-                if (toplamhiz > 0.01f)
-                {
-                    anim.SetBool("Run", true);
-                }
-                else
-                {
-                    anim.SetBool("Run", false);
-                }
-            }
-            else if (control == Control.Mobile)
-            {
-                float inputX = joystick.Horizontal;
-                float inputY = joystick.Vertical;
-
-                Vector3 StickDirection = new Vector3(inputX, 0, inputY);
-
-                float toplamhiz = Vector3.ClampMagnitude(StickDirection, 0.1f).magnitude;
-
-                if (toplamhiz > 0.01f)
-                {
-                    anim.SetBool("Run", true);
-                }
-                else
-                {
-                    anim.SetBool("Run", false);
-                }
-            }
+            case "Seeding":
+                anim.SetTrigger("Seeding");
+                move = false;
+                break;
+            case "Sawing":
+                anim.SetTrigger("Sawing");
+                move = false;
+                break;
+            case "Idle":
+                move = true;
+                break;
         }
-
-        _EkmeTusu.onClick.AddListener(() => anim.SetTrigger("Seeding"));
-        _EkmeTusu.onClick.AddListener(() => move = false);
     }
 
     public void Cogalt()
@@ -131,16 +130,28 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Farm"))
+        if (col.CompareTag("Cultivable")|| col.CompareTag("Sawnable"))
         {
             col.GetComponent<Farming>().enabled = true;
+        }
+        if (col.CompareTag("Sawnable") || col.CompareTag("Virgo"))
+        {
+            Scythe.SetActive(true);
+            BicmeTusu.gameObject.SetActive(true);
+        }
+        else
+        {
+            Scythe.SetActive(false);
+            BicmeTusu.gameObject.SetActive(false);
         }
     }
     private void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("Farm"))
+        if (col.CompareTag("Cultivable") || col.CompareTag("Sawnable"))
         {
             col.GetComponent<Farming>().enabled = false;
+            Scythe.SetActive(false);
+            BicmeTusu.gameObject.SetActive(false);
         }
     }
 }

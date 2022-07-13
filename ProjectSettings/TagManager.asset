@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Farm
+  - Sawnable
+  - Cultivable
+  - Virgo
   layers:
   - Default
   - TransparentFX
