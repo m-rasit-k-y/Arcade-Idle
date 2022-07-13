@@ -9,7 +9,7 @@ public class Sawing : MonoBehaviour
     {
         if (col.CompareTag("Virgo") && sawn)
         {
-            Destroy(col.gameObject);
+            col.gameObject.SetActive(false);
         }
     }
 

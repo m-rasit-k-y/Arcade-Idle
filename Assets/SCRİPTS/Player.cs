@@ -128,7 +128,7 @@ public class Player : Sawing
         Handle_image.color = new Color(1, 1, 1, 0.3f);
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         if (col.CompareTag("Cultivable")|| col.CompareTag("Sawnable"))
         {
