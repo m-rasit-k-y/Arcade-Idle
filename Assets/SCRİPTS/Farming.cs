@@ -57,12 +57,14 @@ public class Farming : MonoBehaviour
         Growing = true;
         playerscript.EkmeTusu.gameObject.SetActive(false);
         playerscript.Sack.SetActive(true);
+
         yield return new WaitForSeconds(2.4f);
-        playerscript.Sack.SetActive(false);
         for (int i = 0; i < transform.childCount; i++)
         {
             Seedlings[i].SetActive(true);
         }
+        playerscript.Sack.SetActive(false);
+        playerscript.anim.SetBool("Seeding", false);
         yield return new WaitForSeconds(5);
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -70,13 +72,14 @@ public class Farming : MonoBehaviour
             Carrots[i].SetActive(true);
         }
         yield return new WaitForSeconds(5);
+
         for (int i = 0; i < transform.childCount; i++)
         {
             Carrots[i].SetActive(false);
             Virgos[i].SetActive(true);
-            transform.tag = "Sawnable";
-            StopCoroutine(Farmer());
         }
-        
+        transform.tag = "Sawnable";
+        StopCoroutine(Farmer());
+
     }
 }

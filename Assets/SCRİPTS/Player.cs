@@ -8,7 +8,8 @@ public class Player : Sawing
 {
     [Range(1,20)]
     public float Hiz;
-    private Animator anim;
+    [HideInInspector]
+    public Animator anim;
     public FixedJoystick joystick;
     public Image joystick_image, Handle_image;
 
@@ -103,7 +104,7 @@ public class Player : Sawing
         switch (state)
         {
             case "Seeding":
-                anim.SetTrigger("Seeding");
+                anim.SetBool("Seeding", true);
                 move = false;
                 break;
             case "Sawing":
@@ -128,7 +129,7 @@ public class Player : Sawing
         Handle_image.color = new Color(1, 1, 1, 0.3f);
     }
 
-    private void OnTriggerStay(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Cultivable")|| col.CompareTag("Sawnable"))
         {
@@ -137,12 +138,7 @@ public class Player : Sawing
         if (col.CompareTag("Sawnable") || col.CompareTag("Virgo"))
         {
             Scythe.SetActive(true);
-            BicmeTusu.gameObject.SetActive(true);
-        }
-        else
-        {
-            Scythe.SetActive(false);
-            BicmeTusu.gameObject.SetActive(false);
+            Hiz = 5;
         }
     }
     private void OnTriggerExit(Collider col)
@@ -150,8 +146,11 @@ public class Player : Sawing
         if (col.CompareTag("Cultivable") || col.CompareTag("Sawnable"))
         {
             col.GetComponent<Farming>().enabled = false;
-            Scythe.SetActive(false);
-            BicmeTusu.gameObject.SetActive(false);
+            if (col.CompareTag("Cultivable") || col.CompareTag("Sawnable")|| col.CompareTag("Virgo"))
+            {
+                Scythe.SetActive(false);
+                Hiz = 8;
+            }
         }
     }
 }
