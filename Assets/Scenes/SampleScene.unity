@@ -22265,6 +22265,7 @@ GameObject:
   - component: {fileID: 689779800}
   - component: {fileID: 689779799}
   - component: {fileID: 689779803}
+  - component: {fileID: 689779804}
   m_Layer: 0
   m_Name: -----------PLAYER----------
   m_TagString: Player
@@ -22359,6 +22360,200 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &689779804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689779798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246455474a0d74a4291b3cedc896ebdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonePaths:
+  - 
+  - Armature
+  - Armature/Root_M
+  - Armature/Root_M/Hip_L
+  - Armature/Root_M/Hip_L/Knee_L
+  - Armature/Root_M/Hip_L/Knee_L/Ankle_L
+  - Armature/Root_M/Hip_L/Knee_L/Ankle_L/Toes_L
+  - Armature/Root_M/Hip_L/Knee_L/Ankle_L/Toes_L/ToesEnd_L
+  - Armature/Root_M/Hip_R
+  - Armature/Root_M/Hip_R/Knee_R
+  - Armature/Root_M/Hip_R/Knee_R/Ankle_R
+  - Armature/Root_M/Hip_R/Knee_R/Ankle_R/Toes_R
+  - Armature/Root_M/Hip_R/Knee_R/Ankle_R/Toes_R/ToesEnd_R
+  - Armature/Root_M/Spine1_M
+  - Armature/Root_M/Spine1_M/Spine2_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/Eye_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/Eye_L/EyeEnd_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/Eye_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/Eye_R/EyeEnd_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/HeadEnd_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/Jaw_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/Jaw_M/JawEnd_M
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyeBrow_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyeBrow_L/jnt_eyeBrow_LEnd_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyeBrow_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyeBrow_R/jnt_eyeBrowEnd_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyelid_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyelid_L/jnt_eyelid_LEnd_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyelid_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Neck_M/Head_M/jnt_eyelid_R/jnt_eyelidEnd_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/Sack
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/IndexFinger1_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/IndexFinger1_L/IndexFinger2_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/IndexFinger1_L/IndexFinger2_L/IndexFinger3_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/IndexFinger1_L/IndexFinger2_L/IndexFinger3_L/IndexFinger4_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/jointItemL
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/MiddleFinger1_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/MiddleFinger1_L/MiddleFinger2_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/MiddleFinger1_L/MiddleFinger2_L/MiddleFinger3_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/MiddleFinger1_L/MiddleFinger2_L/MiddleFinger3_L/MiddleFinger4_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/PinkyFinger1_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/PinkyFinger1_L/PinkyFinger2_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/PinkyFinger1_L/PinkyFinger2_L/PinkyFinger3_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/PinkyFinger1_L/PinkyFinger2_L/PinkyFinger3_L/PinkyFinger4_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/RingFinger1_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/RingFinger1_L/RingFinger2_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/RingFinger1_L/RingFinger2_L/RingFinger3_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/RingFinger1_L/RingFinger2_L/RingFinger3_L/RingFinger4_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/ThumbFinger1_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/ThumbFinger1_L/ThumbFinger2_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/ThumbFinger1_L/ThumbFinger2_L/ThumbFinger3_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_L/Shoulder_L/Elbow_L/Wrist_L/ThumbFinger1_L/ThumbFinger2_L/ThumbFinger3_L/ThumbFinger4_L
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/Scythe
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/IndexFinger1_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/IndexFinger1_R/IndexFinger2_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/IndexFinger1_R/IndexFinger2_R/IndexFinger3_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/IndexFinger1_R/IndexFinger2_R/IndexFinger3_R/IndexFinger4_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/jointItemR
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/MiddleFinger1_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/MiddleFinger1_R/MiddleFinger2_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/MiddleFinger1_R/MiddleFinger2_R/MiddleFinger3_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/MiddleFinger1_R/MiddleFinger2_R/MiddleFinger3_R/MiddleFinger4_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/PinkyFinger1_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/PinkyFinger1_R/PinkyFinger2_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/PinkyFinger1_R/PinkyFinger2_R/PinkyFinger3_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/PinkyFinger1_R/PinkyFinger2_R/PinkyFinger3_R/PinkyFinger4_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/RingFinger1_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/RingFinger1_R/RingFinger2_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/RingFinger1_R/RingFinger2_R/RingFinger3_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/RingFinger1_R/RingFinger2_R/RingFinger3_R/RingFinger4_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/ThumbFinger1_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/ThumbFinger1_R/ThumbFinger2_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/ThumbFinger1_R/ThumbFinger2_R/ThumbFinger3_R
+  - Armature/Root_M/Spine1_M/Spine2_M/Chest_M/Scapula_R/Shoulder_R/Elbow_R/Wrist_R/ThumbFinger1_R/ThumbFinger2_R/ThumbFinger3_R/ThumbFinger4_R
+  - Mesh
+  - Mesh/Underwear
+  - Mesh/Body
+  - Mesh/Body/Head
+  - Mesh/Body/Neck
+  - Mesh/Body/Chest
+  - Mesh/Body/Arms
+  - Mesh/Body/Hands
+  - Mesh/Body/Legs
+  - Mesh/Body/Feet
+  - Mesh/Customization
+  - Mesh/Customization/Face
+  - Mesh/Customization/Face/Eyebrows
+  - Mesh/Customization/Face/Eyelashes
+  - Mesh/Customization/Face/Eyes
+  - Mesh/Customization/Hair
+  - Mesh/Customization/Hair/Hair7
+  - Mesh/Customization/Beards
+  - Mesh/Customization/Beards/Beard6
+  - Mesh/Customization/Moustaches
+  - Mesh/Customization/Moustaches/Moustache4
+  showBones: 000000000300000004000000050000000600000008000000090000000a0000000b0000000d0000000e0000000f0000001000000011000000210000002200000023000000240000003b0000003c0000003d0000003e000000
+  foldoutBones: 00000000060000002b000000330000005f0000001900000027000000680000000d000000340000000e00000012000000090000002f0000000a00000010000000170000004900000023000000510000003e00000011000000220000006000000021000000400000004a00000024000000350000000100000002000000460000003d000000280000000f00000066000000080000005700000064000000410000003c0000000b0000004700000042000000450000000500000037000000390000001d000000380000002d0000004b0000004e00000003000000040000002600000030000000140000001b00000031000000550000001f000000530000003b0000004f0000004d0000002c00000052000000
+  mirrorBones: ffffffffffffffffffffffff08000000090000000a0000000b0000000c0000000300000004000000050000000600000007000000ffffffffffffffffffffffffffffffffffffffff14000000150000001200000013000000ffffffffffffffffffffffff1b000000ffffffff19000000ffffffff1f000000ffffffff1d000000ffffffff3b0000003c0000003d0000003e000000ffffffff400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000021000000220000002300000024000000ffffffff260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  mirrorBlendShape: []
+  animatorIkData:
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -17.178429, y: 1.9376494, z: 11.910681}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    target: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: -1.740982
+    swivelPosition: {x: 0, y: 0, z: 0}
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -17.389212, y: 1.4725033, z: 11.041819}
+    rotation: {x: 0.06324628, y: 0.006004563, z: 0.9722772, w: 0.22503547}
+    target: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 167.16061
+    swivelPosition: {x: 0, y: 0, z: 0}
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -16.775234, y: 1.4075593, z: 11.0446415}
+    rotation: {x: -0.29131216, y: 0.059316587, z: 0.42587978, w: -0.85454386}
+    target: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: -129.63379
+    swivelPosition: {x: 0, y: 0, z: 0}
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -17.358234, y: 0.5175989, z: 10.425479}
+    rotation: {x: -0.54000664, y: 0.090845585, z: -0.08675063, w: -0.8322345}
+    target: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: 0.62127686
+    swivelPosition: {x: 0, y: 0, z: 0}
+  - enable: 0
+    _fixed: 0
+    autoRotation: 0
+    spaceType: 0
+    parent: {fileID: 0}
+    position: {x: -17.056194, y: 0.071249776, z: 10.307488}
+    rotation: {x: -0.0010644138, y: -0.06634371, z: 0.00021755573, w: -0.99779624}
+    target: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+    headWeight: 1
+    eyesWeight: 0
+    swivelRotation: -1.3842163
+    swivelPosition: {x: 0, y: 0, z: 0}
+  originalIkData: []
+  selectionData: []
+  lastSelectAnimationClip: {fileID: 7400000, guid: fa7bfcd0555e4dd4e9244d36ed2bf8a3, type: 2}
+  handPoseList: []
+  blendShapeList: []
 --- !u!1 &690929218
 GameObject:
   m_ObjectHideFlags: 0
@@ -65484,7 +65679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &4807429784606305744
 GameObject:
   m_ObjectHideFlags: 0
@@ -65956,14 +66151,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4764888610105118647}
-  m_LocalRotation: {x: 0.2985857, y: 0.521466, z: 0.5641089, w: -0.56630456}
-  m_LocalPosition: {x: -0.125, y: 0.487, z: 0.124}
-  m_LocalScale: {x: 0.2999998, y: 0.29999983, z: 0.1499999}
+  m_LocalRotation: {x: 0.37160432, y: 0.551554, z: 0.5533895, w: -0.5014565}
+  m_LocalPosition: {x: -0.096, y: 0.699, z: 0.064}
+  m_LocalScale: {x: 0.2999998, y: 0.29999983, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7163827768438257008}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -112.103, y: 137.595, z: -240.505}
+  m_LocalEulerAnglesHint: {x: -100.538, y: 129.124, z: -232.496}
 --- !u!1 &5312669946402990798
 GameObject:
   m_ObjectHideFlags: 0
