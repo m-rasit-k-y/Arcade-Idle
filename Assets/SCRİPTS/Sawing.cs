@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class Sawing : MonoBehaviour
 {
-    private bool sawn = false;
     private void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Virgo") && sawn)
-        {
-            col.gameObject.SetActive(false);
-        }
-    }
 
-    public void Saw(int state)
-    {
-        if (state == 0)
+        if (col.tag == "Virgo")
         {
-            sawn = false;
-        }
-        else
-        {
-            sawn = true;
+            var objects = col.GetComponentInParent<Farming>().Virgos;
+
+            objects.Remove(col.gameObject);
+            col.gameObject.SetActive(false);
         }
     }
 }

@@ -12,9 +12,11 @@ public class Farming : MonoBehaviour
     private bool Growing;
 
     private Player playerscript;
+
     private void Awake()
     {
         playerscript = GameObject.FindWithTag("Player").GetComponent<Player>();
+
         for (int i = 0; i < transform.childCount; i++)
         {
             Seedlings.Add(transform.GetChild(i).GetChild(1).gameObject);
@@ -24,19 +26,28 @@ public class Farming : MonoBehaviour
             if (i == transform.childCount - 1) break;
         }
     }
-    void Start()
-    {
 
-    }
+
     private void Update()
     {
-
+        if (transform.CompareTag("Sawnable"))
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (Virgos[i].activeSelf)
+                {
+                    transform.tag = "Cultivable";
+                }
+                if (i == transform.childCount - 1) break;
+            }
+        }
     }
 
 
     private void OnTriggerStay(Collider col)
     {
         playerscript.EkmeTusu.onClick.AddListener(() => StartCoroutine(Farmer()));
+
         if (col.CompareTag("Player") && !Growing)
         {
             playerscript.EkmeTusu.gameObject.SetActive(true);

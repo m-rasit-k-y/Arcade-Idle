@@ -12,7 +12,6 @@ public class Player : Sawing
     public FloatingJoystick joystick;
 
     public Button EkmeTusu;
-    public Button BicmeTusu;
     public GameObject Sack;
     public GameObject Scythe;
     [HideInInspector]
@@ -123,7 +122,8 @@ public class Player : Sawing
         if (col.CompareTag("Sawnable") || col.CompareTag("Virgo"))
         {
             Scythe.SetActive(true);
-            Hiz = 5;
+            anim.SetBool("Sawing", true);
+            Hiz = 3;
         }
     }
     private void OnTriggerExit(Collider col)
@@ -131,11 +131,10 @@ public class Player : Sawing
         if (col.CompareTag("Cultivable") || col.CompareTag("Sawnable"))
         {
             col.GetComponent<Farming>().enabled = false;
-            if (col.CompareTag("Cultivable") || col.CompareTag("Sawnable")|| col.CompareTag("Virgo"))
-            {
-                Scythe.SetActive(false);
-                Hiz = 8;
-            }
+
+            Scythe.SetActive(false);
+            anim.SetBool("Sawing", false);
+            Hiz = 8;
         }
     }
 }
