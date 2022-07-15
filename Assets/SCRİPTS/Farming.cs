@@ -9,7 +9,6 @@ public class Farming : MonoBehaviour
     public List<GameObject> Seedlings;
     public List<GameObject> Carrots;
     public List<GameObject> Virgos;
-    private bool Growing;
 
     private Player playerscript;
 
@@ -30,14 +29,13 @@ public class Farming : MonoBehaviour
 
     private void Update()
     {
-        if (transform.CompareTag("Sawnable"))
+        if (transform.CompareTag("Sawnable") && Virgos.Count == 0)
         {
+            transform.tag = "Cultivable";
             for (int i = 0; i < transform.childCount; i++)
             {
-                if (Virgos[i].activeSelf)
-                {
-                    transform.tag = "Cultivable";
-                }
+                Virgos.Add(transform.GetChild(i).GetChild(0).gameObject);
+
                 if (i == transform.childCount - 1) break;
             }
         }
@@ -48,7 +46,7 @@ public class Farming : MonoBehaviour
     {
         playerscript.EkmeTusu.onClick.AddListener(() => StartCoroutine(Farmer()));
 
-        if (col.CompareTag("Player") && !Growing)
+        if (col.CompareTag("Player") && transform.CompareTag("Cultivable"))
         {
             playerscript.EkmeTusu.gameObject.SetActive(true);
         }
@@ -65,10 +63,9 @@ public class Farming : MonoBehaviour
 
     IEnumerator Farmer()
     {
-        Growing = true;
         playerscript.EkmeTusu.gameObject.SetActive(false);
         playerscript.Sack.SetActive(true);
-
+        transform.tag = "Cultivated";
         yield return new WaitForSeconds(2.4f);
         for (int i = 0; i < transform.childCount; i++)
         {

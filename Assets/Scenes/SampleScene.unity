@@ -22546,7 +22546,7 @@ MonoBehaviour:
   Sack: {fileID: 1208812548}
   Scythe: {fileID: 3260445601080930656}
   move: 1
-  control: 0
+  control: 1
 --- !u!4 &689779802
 Transform:
   m_ObjectHideFlags: 0

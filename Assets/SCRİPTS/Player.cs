@@ -125,6 +125,12 @@ public class Player : Sawing
             anim.SetBool("Sawing", true);
             Hiz = 3;
         }
+        if(col.CompareTag("Cultivable") || col.CompareTag("Cultivated"))
+        {
+            Scythe.SetActive(false);
+            anim.SetBool("Sawing", false);
+            Hiz = 8;
+        }
     }
     private void OnTriggerExit(Collider col)
     {
